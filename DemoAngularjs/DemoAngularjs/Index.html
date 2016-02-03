@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <title></title>
+    <script src="js/angular.js"></script>
+    <script src="js/sample.js"></script>
+</head>
+<body>
+    <div ng-controller="myController">
+        SearchByname: <input type="text" placeholder="serch name & gender" ng-model="searchText" /><br />
+  
+        <br />
+       
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>gender</td>
+                    <td>Date Of Birth</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="emp in employees | filter:search">
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.gender | gender}}</td>
+                    <td>{{emp.DOB}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
